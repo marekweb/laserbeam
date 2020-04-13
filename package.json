@@ -1,0 +1,42 @@
+{
+  "name": "laserbeam",
+  "repository": "marekweb/laserbeam",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^7.9.4",
+    "estraverse": "^5.0.0",
+    "hast-util-classnames": "^1.0.1",
+    "hast-util-to-string": "^1.0.3",
+    "hastscript": "^5.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "prettier": "^2.0.4"
+  },
+  "files": [
+    "index.js",
+    "convert-babel-tokens.js",
+    "highlight-nodes.js"
+  ],
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "proseWrap": "always"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": "off"
+    }
+  }
+}
