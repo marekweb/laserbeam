@@ -5,6 +5,12 @@ const h = require("hastscript");
 
 function parse(input) {
   return babelParser.parse(input, {
+    // Make the parsing very permissive
+    allowImportExportEverywhere: true,
+    allowReturnOutsideFunction: true,
+    allowSuperOutsideMethod: true,
+    allowUndeclaredExports: true,
+
     plugins: ["estree"],
     tokens: true,
   });
@@ -69,5 +75,5 @@ function convertTokensToHastNodes(tokens) {
 }
 
 module.exports = {
-  transform
+  transform,
 };
