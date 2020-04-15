@@ -1,6 +1,7 @@
 const babelParser = require("@babel/parser");
 const convertBabelTokens = require("./convert-babel-tokens");
 const highlightNodes = require("./highlight-nodes");
+const transformTaggedComments = require("./transform-tagged-comments");
 const h = require("hastscript");
 
 function parse(input) {
@@ -32,6 +33,9 @@ function transform(source, options = {}) {
 
   // highlightNodes modifies newTokens
   highlightNodes(tree.program, tokens);
+
+  // Transform special comments
+  tokens = transformTaggedComments(tokens);
 
   // Apply removal to tokens which are flagged `remove`.
   tokens = tokens.filter(t => !t.remove);
