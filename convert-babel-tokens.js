@@ -51,9 +51,19 @@ function getTokenType(babelToken) {
 }
 
 function convertBabelToken(babelToken, source) {
+  const type = getTokenType(babelToken);
+  const text = source.slice(babelToken.start, babelToken.end);
+
+  // Comments and strings have a "value" which is the content inside, without delimiters.
+  // Meanwhile the "text" property is the entire text including delimiters.
+  let value = text;
+  if (type === "comment" || type === "string") {
+    value = babelToken.value;
+  }
   return {
-    type: getTokenType(babelToken),
-    text: source.slice(babelToken.start, babelToken.end),
+    type,
+    text,
+    value,
     start: babelToken.start,
     end: babelToken.end,
   };
