@@ -12,7 +12,7 @@ function parse(input) {
     allowSuperOutsideMethod: true,
     allowUndeclaredExports: true,
 
-    plugins: ["estree"],
+    plugins: ["estree", "typescript", "jsx"],
     tokens: true,
   });
 }
@@ -70,10 +70,15 @@ function convertTokensToHastNodes(tokens) {
       classList.push("t-highlight");
     }
 
+    let tokenBodyNode = t.text;
+    if (t.link) {
+      tokenBodyNode = h("a", { href: t.link }, tokenBodyNode);
+    }
+
     return h(
       "span",
       { className: classList, "data-index": t.index, "data-type": t.type },
-      t.text
+      tokenBodyNode
     );
   });
 }
