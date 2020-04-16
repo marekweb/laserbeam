@@ -1,0 +1,96 @@
+.t-token.t-keyword {
+  color: #c53030;
+}
+
+.t-token.t-name {
+  color: #2b6cb0;
+}
+
+.t-token.t-punctuation {
+  color: #606060;
+}
+
+.t-token.t-num {
+  color: #4c51bf;
+}
+
+.t-token.t-string {
+  color: #276749; /* green-800 */
+  border-radius: 0.2em;
+}
+
+.t-template {
+  color: #276749; /* green-800 */
+}
+
+.t-token.t-comment {
+  color: #b7791f; /* orange-700 */
+  background-color: #feebc8; /* orange-200 */
+  box-shadow: 0 0 0 0.2em #feebc8;
+  border-radius: 0.2em;
+}
+
+.t-token.t-highlight {
+  background-color: #faf089;
+  box-shadow: 0 0 0 0.1em #faf089;
+  border-radius: 0.2em;
+}
+
+.t-code {
+  font-family: Fira Code;
+  font-size: 24px;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.t-token {
+  white-space: pre;
+  position: relative;
+}
+
+.t-tag {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0.15em 0.3em 0;
+  border-radius: 0.2em;
+  padding: 0.2em 0.5em;
+  margin: 0 0.5em;
+  color: #606060;
+}
+
+.t-badge {
+  text-align: center;
+  border-radius: 1em;
+  background-color: #808080;
+  color: white;
+  padding: 0.1em 0.5em;
+  margin: 0 1em;
+  font-size: 0.9em;
+}
+
+.t-icon {
+  height: 1.2em;
+  margin: 0 0.5em;
+  vertical-align: middle;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.t-icon:hover {
+  opacity: 1;
+}
+
+.t-code {
+  background-color: #f6f6f6;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.t-token a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.t-token a:hover {
+  text-decoration: underline;
+}
