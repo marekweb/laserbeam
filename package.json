@@ -17,7 +17,8 @@
   "files": [
     "index.js",
     "convert-babel-tokens.js",
-    "highlight-nodes.js"
+    "highlight-nodes.js",
+    "transform-tagged-comments.js"
   ],
   "scripts": {
     "format": "prettier --write ."

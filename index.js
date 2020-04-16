@@ -1,8 +1,8 @@
 const babelParser = require("@babel/parser");
+const h = require("hastscript");
 const convertBabelTokens = require("./convert-babel-tokens");
 const highlightNodes = require("./highlight-nodes");
 const transformTaggedComments = require("./transform-tagged-comments");
-const h = require("hastscript");
 
 function parse(input) {
   return babelParser.parse(input, {
@@ -12,6 +12,7 @@ function parse(input) {
     allowSuperOutsideMethod: true,
     allowUndeclaredExports: true,
 
+    // @TODO: add fallbacks to estraverse so that it can handle jsx nodes
     plugins: ["estree", "typescript", "jsx"],
     tokens: true,
   });
@@ -34,7 +35,7 @@ function transform(source, options = {}) {
   // highlightNodes modifies newTokens
   highlightNodes(tree.program, tokens);
 
-  // Transform special comments
+  // Transform tagged comments
   tokens = transformTaggedComments(tokens);
 
   // Apply removal to tokens which are flagged `remove`.
