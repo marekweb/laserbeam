@@ -29,7 +29,7 @@ Laserbeam outputs a representation of HTML nodes. This allows you to apply
 transformations (add or remove nodes, change class names) before converting it
 to HTML.
 
-The output is in [**HAST**][hast] format and can be[converted to a HTML string
+The output is in [**HAST**][hast] format and can be converted to a HTML string
 with a [HAST to HTML utility][hast-util-to-html].
 
 ## License

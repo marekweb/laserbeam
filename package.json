@@ -4,15 +4,15 @@
   "version": "0.2.0",
   "license": "MIT",
   "dependencies": {
-    "@babel/parser": "^7.9.4",
-    "estraverse": "^5.0.0",
-    "hast-util-classnames": "^1.0.1",
-    "hast-util-to-string": "^1.0.3",
-    "hastscript": "^5.1.2"
+    "@babel/parser": "^7.12.5",
+    "estraverse": "^5.2.0",
+    "hast-util-classnames": "^1.0.2",
+    "hast-util-to-string": "^1.0.4",
+    "hastscript": "^6.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "prettier": "^2.0.4"
+    "eslint": "^7.13.0",
+    "prettier": "^2.1.2"
   },
   "files": [
     "index.js",
@@ -21,6 +21,7 @@
     "transform-tagged-comments.js"
   ],
   "scripts": {
+    "lint": "eslint .",
     "format": "prettier --write ."
   },
   "prettier": {
