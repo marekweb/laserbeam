@@ -1,7 +1,7 @@
 {
   "name": "laserbeam",
   "repository": "marekweb/laserbeam",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "dependencies": {
     "@babel/parser": "^7.12.5",
