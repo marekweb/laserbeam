@@ -7,6 +7,12 @@ const keywords = [
   "const",
   "break",
   "if",
+  "else",
+  "throw",
+  "catch",
+  "async",
+  "await",
+  "yield",
 ];
 const punctuation = [
   "+/-",
@@ -31,7 +37,8 @@ const punctuation = [
   "&&",
   "||",
   "=>",
-  "${", // template expression, used along with `}`
+  "${", // template expression, used along with `}`,
+  ".",
 ];
 
 function getTokenType(babelToken) {
@@ -83,7 +90,7 @@ function convertBabelTokens(babelTokens, source) {
   }
 
   let position = 0;
-  return babelTokens.flatMap(t => {
+  const convertedTokens = babelTokens.flatMap(t => {
     const resultTokens = [];
     if (t.start > position) {
       // Need to insert a whitespace token
@@ -98,6 +105,13 @@ function convertBabelTokens(babelTokens, source) {
     position = t.end;
     return resultTokens;
   });
+
+  // It's expected that the last token is "eof", in which case drop it.
+  if (convertedTokens[convertedTokens.length - 1].type === "eof") {
+    convertedTokens.pop();
+  }
+
+  return convertedTokens;
 }
 
 module.exports = convertBabelTokens;

@@ -1,22 +1,8 @@
-const babelParser = require("@babel/parser");
 const h = require("hastscript");
 const convertBabelTokens = require("./convert-babel-tokens");
 const highlightNodes = require("./highlight-nodes");
 const transformTaggedComments = require("./transform-tagged-comments");
-
-function parse(input) {
-  return babelParser.parse(input, {
-    // Make the parsing very permissive
-    allowImportExportEverywhere: true,
-    allowReturnOutsideFunction: true,
-    allowSuperOutsideMethod: true,
-    allowUndeclaredExports: true,
-
-    // @TODO: add fallbacks to estraverse so that it can handle jsx nodes
-    plugins: ["estree", "typescript", "jsx"],
-    tokens: true,
-  });
-}
+const parse = require("./parse");
 
 const defaultOptions = {
   removeComments: false,
