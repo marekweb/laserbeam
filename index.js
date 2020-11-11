@@ -32,10 +32,14 @@ function transform(source, options = {}) {
     tokens = removeCommentTokens(tokens);
   }
 
+  if (typeof options.mapTokens === "function") {
+    tokens = tokens.map(tokens, options.mapTokens);
+  }
+
   // highlightNodes modifies newTokens
   highlightNodes(tree.program, tokens);
 
-  // Transform tagged comments
+  // Create new token types from comments that contain specific tags.
   tokens = transformTaggedComments(tokens);
 
   // Apply removal to tokens which are flagged `remove`.

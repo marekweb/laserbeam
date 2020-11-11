@@ -1,3 +1,7 @@
+/**
+ * Map an array but only apply the map callback to elements that satisfy the
+ * filter callback, and pass other items through untouched.
+ */
 function mapOnly(arr, filterCallback, mapCallback) {
   return arr.map((item, index) => {
     if (filterCallback(item, index, arr)) {
@@ -6,6 +10,11 @@ function mapOnly(arr, filterCallback, mapCallback) {
     return item;
   });
 }
+
+/**
+ * Maps an array of comments and transforms comments tha contain "@tag" or
+ * "@badge" into tokens of a "tag" or "badge" type.
+ */
 function transformTaggedComments(tokens) {
   return mapOnly(
     tokens,
