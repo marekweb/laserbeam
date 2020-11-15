@@ -17,6 +17,7 @@
   },
   "files": [
     "index.js",
+    "parse.js",
     "convert-babel-tokens.js",
     "highlight-nodes.js",
     "transform-tagged-comments.js"
