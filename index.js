@@ -19,7 +19,7 @@ function transform(source, options = {}) {
   }
 
   if (typeof options.mapTokens === "function") {
-    tokens = tokens.map(tokens, options.mapTokens);
+    tokens = tokens.map(options.mapTokens);
   }
 
   // highlightNodes modifies newTokens
